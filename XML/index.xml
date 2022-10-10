@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE items [
+	<!ELEMENT items (item)*>
+	<!ELEMENT item (name, price, discount)>
+	<!ELEMENT name (#PCDATA)>
+	<!ELEMENT price (rupees, paise)>
+	<!ELEMENT discount (#PCDATA)>
+	<!ELEMENT rupees (#PCDATA)>
+	<!ELEMENT paise (#PCDATA)>
+	<!ATTLIST item avilablity CDATA #REQUIRED>
+]>

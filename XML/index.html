@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        const doc = `<items>
+                        <item avilablity="1">
+                            <name>Deepak</name>
+                            <price>
+                                <rupees>200</rupees>
+                                <paise>50</paise>
+                            </price>
+                            <discount>10</discount>
+                        </item>
+                        <item avilablity="1">
+                            <name>Subhi</name>
+                            <price>
+                                <rupees>300</rupees>
+                                <paise>50</paise>
+                            </price>
+                            <discount>5</discount>
+                        </item>
+                        <item avilablity="150" id="abc">
+                            <name>Dimpal</name>
+                            <price>
+                                <rupees>1</rupees>
+                                <paise>0</paise>
+                            </price>
+                            <discount>100</discount>
+                        </item>
+                    </items>`;
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(doc, "text/xml");
+        var item = xmlDoc.querySelectorAll("items item");
+        
+        var element = `<table border=1>`;
+        element += `<tr><td>Name</td> <td>Discount</td></tr>`
+        for(var i of item){
+            element += "<tr>";
+            element += `<td>${i.querySelector("name").innerHTML}</td><td>${i.querySelector("discount").innerHTML}</td>`
+            element += "</tr>"
+        }
+        element += "</table>"
+        document.body.innerHTML += element;
+    </script>
+</body>
+</html>

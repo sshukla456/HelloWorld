@@ -1,0 +1,6 @@
+    <!ELEMENT class (student)*>
+    <!ELEMENT student (name, sirname, branch)>
+    <!ELEMENT name (#PCDATA)>
+    <!ELEMENT sirname (#PCDATA)>
+    <!ELEMENT branch (#PCDATA)>
+    <!ATTLIST student rollno CDATA "12013071">
